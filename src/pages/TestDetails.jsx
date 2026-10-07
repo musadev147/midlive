@@ -123,10 +123,10 @@ const TestDetails = () => {
               </div>
 
               {/* Badges */}
-              <div className="flex gap-4 mb-8 border-b border-gray-100 pb-6">
-                <div className="flex items-center gap-1.5 text-xs text-gray-600 font-medium"><span className="text-blue-400">💧</span> Blood</div>
-                <div className="flex items-center gap-1.5 text-xs text-gray-600 font-medium"><span className="text-blue-400">🕒</span> Report in 1 day</div>
-                <div className="flex items-center gap-1.5 text-xs text-gray-600 font-medium"><span className="text-blue-400">📑</span> 1 Parameter</div>
+              <div className="flex flex-wrap gap-2 sm:gap-4 mb-8 border-b border-gray-100 pb-6">
+                <div className="flex items-center gap-1.5 text-xs text-gray-600 font-medium bg-blue-50 px-2 py-1 rounded-md"><span className="text-blue-400">💧</span> Blood</div>
+                <div className="flex items-center gap-1.5 text-xs text-gray-600 font-medium bg-blue-50 px-2 py-1 rounded-md"><span className="text-blue-400">🕒</span> Report in 1 day</div>
+                <div className="flex items-center gap-1.5 text-xs text-gray-600 font-medium bg-blue-50 px-2 py-1 rounded-md"><span className="text-blue-400">📑</span> 1 Parameter</div>
               </div>
 
               <div className="flex flex-col md:flex-row gap-8">
@@ -204,14 +204,14 @@ const TestDetails = () => {
 
       <main className="flex-grow container mx-auto px-4 sm:px-6 py-6 max-w-7xl">
         {/* Breadcrumb */}
-        <div className="text-sm text-gray-500 mb-6 flex items-center space-x-2">
-           <Link to="/" className="hover:text-blue-500">Home</Link>
-           <span>&gt;</span>
-           <Link to="/home-lab" className="hover:text-blue-500">Home Lab</Link>
-           <span>&gt;</span>
-           <span className="hover:text-blue-500 cursor-pointer">All Lab Tests</span>
-           <span>&gt;</span>
-           <span className="text-blue-500 font-semibold">Test Details</span>
+        <div className="text-xs sm:text-sm text-gray-500 mb-6 flex flex-wrap items-center gap-2">
+           <Link to="/" className="hover:text-blue-500 whitespace-nowrap">Home</Link>
+           <span className="text-gray-400">&gt;</span>
+           <Link to="/home-lab" className="hover:text-blue-500 whitespace-nowrap">Home Lab</Link>
+           <span className="text-gray-400">&gt;</span>
+           <span className="hover:text-blue-500 cursor-pointer whitespace-nowrap">All Lab Tests</span>
+           <span className="text-gray-400">&gt;</span>
+           <span className="text-blue-500 font-semibold whitespace-nowrap">Test Details</span>
         </div>
 
         {/* Top Details Section */}

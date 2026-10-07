@@ -232,8 +232,8 @@ const HomeLab = () => {
           <div className="w-full h-[200px] sm:h-[300px] bg-gradient-to-r from-purple-200 via-pink-100 to-blue-100 rounded-2xl mb-4 relative overflow-hidden shadow-sm flex items-center justify-center border border-purple-100">
              {/* Text placeholder mimicking the banner */}
              <div className="text-center z-10 p-4">
-                <h1 className="text-3xl sm:text-5xl font-extrabold text-[#5c2d91] mb-2 drop-shadow-sm">মেডিভিলা হোম ল্যাব টেস্ট</h1>
-                <p className="text-lg sm:text-xl font-bold text-[#5c2d91] bg-yellow-400 px-6 py-1.5 rounded-full inline-block shadow-sm">
+                <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#5c2d91] mb-2 md:mb-4 drop-shadow-sm leading-tight">মেডিভিলা হোম ল্যাব টেস্ট</h1>
+                <p className="text-sm sm:text-lg md:text-xl font-bold text-[#5c2d91] bg-yellow-400 px-4 sm:px-6 py-1.5 rounded-full inline-block shadow-sm">
                   মাত্র ৳৩০০ থেকে শুরু
                 </p>
              </div>

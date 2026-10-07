@@ -1,0 +1,84 @@
+import React from 'react';
+import CustomerRow from './CustomerRow';
+import Pagination from './Pagination';
+
+const CustomerTable = ({
+  currentItems,
+  selectedApplications,
+  handleCheckboxChange,
+  handleEditClick,
+  handlePrintClick,
+  handleDeleteClick,
+  handleAddPoints,
+  getStatusColor,
+  showStatus,
+  orderStatuses,
+  fetchStatusOnClick,
+  totalPages,
+  currentPage,
+  handlePageChange,
+  activeTab,
+  selectAll,
+  handleSelectAllChange,
+  onViewOrder,
+}) => {
+  return (
+    <div className="overflow-x-auto w-full">
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
+          <tr>
+            <th className="px-3 py-3 text-left text-xs font-semibold text-gray-600">
+              <input
+                type="checkbox"
+                checked={selectAll}
+                onChange={handleSelectAllChange}
+                className="rounded border-gray-300 text-violet-600 focus:ring-violet-500"
+              />
+            </th>
+            <th className="px-3 py-3 text-left text-xs font-semibold text-gray-600">Order</th>
+            <th className="px-3 py-3 text-left text-xs font-semibold text-gray-600">Customer</th>
+            <th className="px-3 py-3 text-left text-xs font-semibold text-gray-600">Date</th>
+            <th className="px-3 py-3 text-left text-xs font-semibold text-gray-600">Status</th>
+            <th className="px-3 py-3 text-left text-xs font-semibold text-gray-600">Type</th>
+            <th className="px-3 py-3 text-left text-xs font-semibold text-gray-600">Amount</th>
+            <th className="px-3 py-3 text-left text-xs font-semibold text-gray-600">Actions</th>
+          </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-100">
+          {currentItems.map((app) => (
+            <CustomerRow
+              key={app.id}
+              app={app}
+              selected={selectedApplications.includes(app.id)}
+              onCheckboxChange={handleCheckboxChange}
+              onEditClick={handleEditClick}
+              onPrintClick={handlePrintClick}
+              onDeleteClick={handleDeleteClick}
+              onAddPointsClick={handleAddPoints}
+              getStatusColor={getStatusColor}
+              showStatus={showStatus}
+              orderStatuses={orderStatuses}
+              fetchStatusOnClick={fetchStatusOnClick}
+              activeTab={activeTab}
+              onViewOrder={onViewOrder}
+            />
+          ))}
+        </tbody>
+      </table>
+
+      {currentItems.length === 0 && (
+        <div className="text-center py-8 text-gray-500">No orders found in this category.</div>
+      )}
+
+      <Pagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+        itemsPerPage={10}
+        filteredApplications={currentItems}
+      />
+    </div>
+  );
+};
+
+export default CustomerTable;
